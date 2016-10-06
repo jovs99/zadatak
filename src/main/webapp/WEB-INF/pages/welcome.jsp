@@ -35,6 +35,7 @@
 	    padding: 6px;
 	    margin-left: -5px;
 	}
+	
 </style>
 <title>Welcome</title>
 </head>
@@ -78,16 +79,31 @@
                 </c:forEach>   
                 </tbody>           
             </table>
-            </div>
+            <!--  pager -->
+            <div style="width: 70%;margin-bottom: 10px;">
+	            <div id="pager" class="pager" style="float:right; text-align: right; position: initial !important;">
+				  <form>
+<%-- 				    <img src="<c:url value="first.png" />" class="first" style="display:none;"/> --%>
+				    <img src="<c:url value="/resources/images/prev.png" />" class="prev"/>
+				    <span class="pagedisplay"></span>
+				    <img src="<c:url value="/resources/images/next.png"/>" class="next"/>
+<!-- 				    <img src="last.png" class="last" style="display:none;"/> -->
+				    <select class="pagesize" style="display:none;">
+				      <option value="5">5</option>
+				      <option value="all">All Rows</option>
+				    </select>
+				  </form>
+				</div>
+			</div>
+         </div>
 </body>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-3.1.1.min.js" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery.-latest.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery-latest.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.tablesorter.min.js" />"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.tablesorter.pager.js" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery.tablesorter.js" />"></script>
 <script> 	
 	$(document).ready(function() { 
-		$("#mytable").tablesorter();
+		$("table").tablesorter()
+		.tablesorterPager({container: $("#pager"), size: 5}); 
 	});
 	
 	function checkLength(){
