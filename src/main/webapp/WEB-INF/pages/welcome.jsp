@@ -80,14 +80,12 @@
                 </tbody>           
             </table>
             <!--  pager -->
-            <div style="width: 70%;margin-bottom: 10px;">
+            <div style="width: 70%;margin-top: 10px;">
 	            <div id="pager" class="pager" style="float:right; text-align: right; position: initial !important;">
 				  <form>
-<%-- 				    <img src="<c:url value="first.png" />" class="first" style="display:none;"/> --%>
 				    <img src="<c:url value="/resources/images/prev.png" />" class="prev"/>
 				    <span class="pagedisplay"></span>
 				    <img src="<c:url value="/resources/images/next.png"/>" class="next"/>
-<!-- 				    <img src="last.png" class="last" style="display:none;"/> -->
 				    <select class="pagesize" style="display:none;">
 				      <option value="5">5</option>
 				      <option value="all">All Rows</option>
